@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xptoinfo.workorders.MainPanelController">
+  <panes>
+    <TitledPane animated="false" text="Criar cliente">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="147.0" layoutY="85.0" text="Nome">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="137.0" layoutY="124.0" text="Telefone">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="146.0" layoutY="194.0" text="E-mail">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="134.0" layoutY="14.0" text="Cadastro de Clientes">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="clientName" layoutX="214.0" layoutY="86.0" />
+                  <TextField fx:id="clientPhone" layoutX="214.0" layoutY="125.0" />
+                  <TextField fx:id="clientAddress" layoutX="214.0" layoutY="161.0" />
+                  <TextField fx:id="clientEmail" layoutX="214.0" layoutY="195.0" />
+                  <Label layoutX="134.0" layoutY="160.0" text="Endereço">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="246.0" layoutY="232.0" mnemonicParsing="false" onAction="#onClickCreateClient" prefHeight="26.0" prefWidth="83.0" text="Cadastrar">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </TitledPane>
+    <TitledPane animated="false" text="Criar ordem de serviço">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="180.0" layoutY="14.0" text="Ordem de Serviço">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="users" layoutX="33.0" layoutY="95.0" prefHeight="26.0" prefWidth="152.0" />
+                  <Label layoutX="78.0" layoutY="60.0" text="Cliente">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="updateList" layoutX="200.0" layoutY="95.0" mnemonicParsing="false" onAction="#updateChoices" text="Atualizar" />
+                  <Separator layoutX="283.0" layoutY="60.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <Label layoutX="50.0" layoutY="136.0" text="Equipamento">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="createEquipment" layoutX="33.0" layoutY="173.0" prefHeight="26.0" prefWidth="167.0" />
+                  <Label layoutX="76.0" layoutY="217.0" text="Defeito">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="createIssue" layoutX="33.0" layoutY="247.0" prefHeight="26.0" prefWidth="167.0" />
+                  <Label layoutX="387.0" layoutY="60.0" text="Técnico">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="createTechnician" layoutX="337.0" layoutY="88.0" prefHeight="26.0" prefWidth="167.0" />
+                  <Label layoutX="389.0" layoutY="136.0" text="Serviço">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="createService" layoutX="337.0" layoutY="172.0" prefHeight="26.0" prefWidth="167.0">
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </TextArea>
+                  <Label layoutX="394.0" layoutY="217.0" text="Valor">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="createPrice" layoutX="337.0" layoutY="247.0" prefHeight="26.0" prefWidth="167.0">
+                  </TextArea>
+                  <Button fx:id="createOrderButton" layoutX="193.0" layoutY="297.0" mnemonicParsing="false" onAction="#onClickCreateOrder" text="Criar ordem de serviço">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="hiddenUserId" layoutX="0.1" layoutY="0.1" opacity="0.0" prefHeight="9.0" prefWidth="0.0" />
+               </children></AnchorPane>
+      </content>
+    </TitledPane>
+      <TitledPane animated="false" text="Ordens de serviço">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="osUser" layoutX="38.0" layoutY="100.0" onMouseClicked="#populateUsersChoice" prefHeight="26.0" prefWidth="106.0" />
+                  <Separator layoutX="178.0" layoutY="47.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <Label layoutX="209.0" layoutY="78.0" text="Número" />
+                  <Label layoutX="218.0" layoutY="113.0" text="Data" />
+                  <TextField fx:id="osNumber" layoutX="277.0" layoutY="74.0" prefHeight="26.0" prefWidth="77.0" />
+                  <Separator layoutX="394.0" layoutY="47.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <TextField fx:id="osData" layoutX="278.0" layoutY="109.0" prefHeight="26.0" prefWidth="76.0" />
+                  <TextField fx:id="idcliOs" layoutX="278.0" layoutY="143.0" prefHeight="26.0" prefWidth="76.0" />
+                  <Label layoutX="193.0" layoutY="147.0" prefHeight="18.0" prefWidth="74.0" text="ID do Cliente" />
+                  <Label layoutX="192.0" layoutY="181.0" prefHeight="18.0" prefWidth="75.0" text="Equipamento" />
+                  <TextField fx:id="equipmentOs" layoutX="278.0" layoutY="177.0" prefHeight="26.0" prefWidth="76.0" />
+                  <Label layoutX="423.0" layoutY="78.0" text="Defeito" />
+                  <TextField fx:id="defeitoOs" layoutX="477.0" layoutY="74.0" prefHeight="26.0" prefWidth="77.0" />
+                  <Label layoutX="423.0" layoutY="113.0" text="Serviço" />
+                  <TextField fx:id="servicoOs" layoutX="477.0" layoutY="109.0" prefHeight="26.0" prefWidth="77.0" />
+                  <Label layoutX="423.0" layoutY="147.0" text="Técnico" />
+                  <TextField fx:id="tecnicoOs" layoutX="477.0" layoutY="142.0" prefHeight="26.0" prefWidth="77.0" />
+                  <Label layoutX="429.0" layoutY="181.0" text="Valor" />
+                  <TextField fx:id="valorOs" layoutX="477.0" layoutY="176.0" prefHeight="26.0" prefWidth="77.0" />
+                  <Label layoutX="39.0" layoutY="78.0" text="Selecione o cliente:" />
+                  <Label layoutX="11.0" layoutY="138.0" text="Selecione a Ordem de Serviço:" />
+                  <ChoiceBox fx:id="osId" layoutX="38.0" layoutY="164.0" prefHeight="26.0" prefWidth="106.0" />
+                  <Button fx:id="searchOrder" layoutX="65.0" layoutY="203.0" mnemonicParsing="false" onAction="#onSearchButtonClicked" text="Buscar" />
+                  <Text layoutX="165.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar Ordens de Serviço">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+  </panes>
+</Accordion>
